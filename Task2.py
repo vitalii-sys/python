@@ -1,15 +1,4 @@
-time = int(input('Введите время в секундах: '))
-hours = time // 3600
-minutes = (time % 3600) // 60
-sec = time - hours*3600 - minutes*60
-
-if hours < 10:
-    hours = '0' + str(hours)
-if minutes < 10:
-    minutes = '0' + str(minutes)
-if sec < 10:
-    sec = '0' + str(sec)
-
-print(f'Ваше время в ЧЧ:ММ:СС: {hours}:{minutes}:{sec}')
-
-
+my_list = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
+my_new_list = [my_list[el] for el in range(1, len(my_list)) if my_list[el] > my_list[el - 1]]
+print(f'Исходный список {my_list}')
+print(f'Новый список {my_new_list}')

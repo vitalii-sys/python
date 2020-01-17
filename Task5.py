@@ -1,14 +1,9 @@
-vyruchka = int(input('Введите Вашу выручку: '))
-izderzhki = int(input('Введите Ваши издержки: '))
+from functools import reduce
 
-if vyruchka > izderzhki:
-    pribyl = vyruchka - izderzhki
-    rentabelnost = pribyl / vyruchka
-    print(f'Работаем в прибыль.\nРентабельность:{rentabelnost}')
-    chislosotrudnikov = int(input('Введите численность сотрудников фирмы: '))
-    pribylchel = pribyl / chislosotrudnikov
-    print(f'Прибыль на одного сотрудника:{pribylchel}')
-elif izderzhki > vyruchka:
-    print('Работаем в убыток.')
-else:
-    print('Работаем на самоокупаемость.')
+
+def my_func(el_p, el):
+    return el_p * el
+
+
+print(f'Список четных значений: {[el for el in range(99, 1001) if el % 2 == 0]}')
+print(f'Результат перемножения всех элементов списка: {reduce(my_func, [el for el in range(99, 1001) if el % 2 == 0])}')

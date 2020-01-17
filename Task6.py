@@ -1,9 +1,19 @@
-a = float(input('Введите результат первого дня: '))
-b = float(input('Введите желаемый результат: '))
-day = 1
-print(f'Результат:\n{day}-й день:{a}')
-while b > a != 0:
-    a = a + a * 0.1
-    day = day + 1
-    print(f'{day}-й день:{a:.2f}')
-print(f'Ответ: на {day}-й день спортсмен достиг результата - не менее {b} км.')
+from itertools import count, cycle
+
+
+for el in count(int(input('Введите стартовое число '))):
+    if el > 10:
+        break
+    else:
+        print(el)
+
+
+my_list = [True, 'ABC', 123, None]
+how = int(input('How many iterations? '))
+n = 0
+for el in cycle(my_list):
+    if n >= how:
+        break
+    else:
+        print(el)
+        n += 1

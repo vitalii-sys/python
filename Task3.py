@@ -1,9 +1,1 @@
-n = input('Введите число n: ')
-
-n1 = str(n)
-n2 = str(n + n)
-n3 = str(n + n + n)
-
-result = int(n1) + int(n2) + int(n3)
-
-print(result)
+print(f'Числа от 20 до 240 кратные 20 или 21 - {[el for el in range(20, 241) if el % 20 == 0 or el % 21 == 0]}')

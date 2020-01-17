@@ -1,12 +1,12 @@
-name = 'Ivan'
-surname = 'Ivanov'
-age = 25
-
-print(name, surname, age)
-
-name = str(input('Введите свое имя: '))
-surname = str(input('Введите свою фамилию: '))
-age = int(input('Введите свой возраст: '))
+from sys import argv
 
 
-print(f'Ваше имя: {name}\nВаша фамилия: {surname}\nВаш возраст: {age}')
+name, time, salary, bonus = argv
+try:
+    time = float(time)
+    salary = float(salary)
+    bonus = float(bonus)
+    res = time * salary + bonus
+    print(f'Salary is: {res}')
+except ValueError:
+    print('Not a number')

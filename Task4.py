@@ -1,11 +1,3 @@
-chislo = int(input('Введите целое положительное число: '))
-
-maximal = chislo % 10
-chislo = chislo // 10
-
-while chislo > 0:
-    if chislo % 10 > maximal:
-        maximal = chislo % 10
-    chislo = chislo // 10
-
-print(f'Наибольшая цифра в числе: {maximal}')
+my_list = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
+my_new_list = [el for el in my_list if my_list.count(el) < 2]
+print(my_new_list)
