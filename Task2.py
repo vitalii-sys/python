@@ -1,4 +1,11 @@
-my_list = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
-my_new_list = [my_list[el] for el in range(1, len(my_list)) if my_list[el] > my_list[el - 1]]
-print(f'Исходный список {my_list}')
-print(f'Новый список {my_new_list}')
+with open('text4task2.txt') as f:
+    c = f.read()
+    print(f'Content of file:\n{c}')
+with open('text4task2.txt') as f:
+    cl = f.readlines()
+    print(f'Quantity of strings: {len(cl)}')
+with open('text4task2.txt') as f:
+    for i in range(len(cl)):
+        cs = f.readline()
+        cs = cs.split()
+        print(f'Quantity of words in {i + 1} string is {len(cs)}')

@@ -1,19 +1,6 @@
-from itertools import count, cycle
-
-
-for el in count(int(input('Введите стартовое число '))):
-    if el > 10:
-        break
-    else:
-        print(el)
-
-
-my_list = [True, 'ABC', 123, None]
-how = int(input('How many iterations? '))
-n = 0
-for el in cycle(my_list):
-    if n >= how:
-        break
-    else:
-        print(el)
-        n += 1
+subj = {}
+with open('file4task6.txt', 'r') as f:
+    for line in f:
+        subject, lecture, practice, lab = line.split()
+        subj[subject] = int(lecture) + int(practice) + int(lab)
+    print(f'Общее количество часов по предмету:\n {subj}')

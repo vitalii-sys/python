@@ -1,0 +1,11 @@
+Ivanov 45234.16
+Kozlov 15348.35
+Petrov 20000.01
+Sidorov 18238.45
+Ektov 19854.38
+Kuznetsov 85236.47
+Volkov 135024.89
+Medvedev 7862.35
+Zaitsev 11235.99
+Belkin 9999.99
+Burundukov 25489.66

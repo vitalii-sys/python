@@ -1,1 +1,10 @@
-print(f'Числа от 20 до 240 кратные 20 или 21 - {[el for el in range(20, 241) if el % 20 == 0 or el % 21 == 0]}')
+with open('file4task3.txt', 'r') as f:
+    sal = []
+    low = []
+    my_list = f.read().split('\n')
+    for i in my_list:
+        i = i.split()
+        if float(i[1]) < 20000:
+            low.append(i[0])
+            sal.append(i[1])
+print(f'Salary less then 20.000: {low}\nAverage salary: {sum(map(float, sal)) / len(sal):.2f}')
