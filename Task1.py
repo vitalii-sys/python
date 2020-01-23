@@ -1,14 +1,22 @@
-f = open('file4task1.txt', 'w')
-line = input('Введите текст \n')
-while line:
-    f.writelines(line)
-    line = input('Введите текст \n')
-    if not line:
-        break
+from time import sleep
+from itertools import cycle
 
 
-f.close()
-f = open('file4task1.txt', 'r')
-c = f.readlines()
-print(c)
-f.close()
+class TrafficLight:
+    __color = ['Red', 'Yellow', 'Green']
+
+    def running(self):
+        a = [0, 1, 2]
+        for i in cycle(a):
+            print(f'Switching color to\n'
+                  f'{TrafficLight.__color[i]}')
+            if i == 0:
+                sleep(7)
+            elif i == 1:
+                sleep(2)
+            elif i == 2:
+                sleep(4)
+
+
+TrafficLight = TrafficLight()
+TrafficLight.running()

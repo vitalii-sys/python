@@ -1,11 +1,17 @@
-with open('text4task2.txt') as f:
-    c = f.read()
-    print(f'Content of file:\n{c}')
-with open('text4task2.txt') as f:
-    cl = f.readlines()
-    print(f'Quantity of strings: {len(cl)}')
-with open('text4task2.txt') as f:
-    for i in range(len(cl)):
-        cs = f.readline()
-        cs = cs.split()
-        print(f'Quantity of words in {i + 1} string is {len(cs)}')
+class Road:
+    def __init__(self, _length, _width):
+        self._length = _length
+        self._width = _width
+
+    def mass(self):
+        return self._length * self._width
+
+
+class MassCount(Road):
+    def __init__(self, _length, _width, volume):
+        super().__init__(_length, _width)
+        self.volume = volume
+
+
+r = MassCount(25, 10000, 125)
+print(r.mass())
