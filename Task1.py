@@ -1,32 +1,38 @@
-class Matrix:
-    def __init__(self, my_matrix):
-        self.matrix = my_matrix
+class Data:
+    def __init__(self, day_month_year):
+        self.day_month_year = str(day_month_year)
+
+    @classmethod
+    def extract(cls, day_month_year):
+        my_date = []
+
+        for i in day_month_year.split():
+            if i != '-': my_date.append(i)
+
+        return int(my_date[0]), int(my_date[1]), int(my_date[2])
+
+    @staticmethod
+    def valid(day, month, year):
+
+        if 1 <= day <= 31:
+            if 1 <= month <= 12:
+                if 2019 >= year >= 0:
+                    return f'All right'
+                else:
+                    return f'Неправильный год'
+            else:
+                return f'Неправильный месяц'
+        else:
+            return f'Неправильный день'
 
     def __str__(self):
-        return 'Матрица:\n' + '\n'.join('\t'.join(map(str, line)) for line in self.matrix)
-
-    def __add__(self, other):
-        result = [[self.matrix[i][j] + other.matrix[i][j] for j in range(len(self.matrix[0]))]
-                  for i in range(len(self.matrix))]
-        return result
+        return f'Текущая дата {Data.extract(self.day_month_year)}'
 
 
-matrix_1 = [
-    [31, 22],
-    [-37, 43],
-    [51, -86],
-]
-
-matrix_2 = [
-    [30, 25],
-    [23, -42],
-    [15, 61],
-]
-
-
-a = Matrix(matrix_1)
-print(a)
-b = Matrix(matrix_2)
-print(b)
-c = Matrix(a + b)
-print(c)
+today = Data('11 - 1 - 2001')
+print(today)
+print(Data.valid(11, 11, 2022))
+print(today.valid(11, 13, 2011))
+print(Data.extract('11 - 11 - 2011'))
+print(today.extract('11 - 11 - 2020'))
+print(Data.valid(1, 11, 2000))

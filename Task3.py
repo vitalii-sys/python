@@ -1,35 +1,25 @@
-class Cell:
-    def __init__(self, quantity):
-        self.quantity = int(quantity)
+class Error:
+    def __init__(self, *args):
+        self.my_list = []
 
-    def __str__(self):
-        return f'Результат операции {self.quantity * "*"}'
+    def my_input(self):
 
-    def __add__(self, other):
-        return Cell(self.quantity + other.quantity)
+        while True:
+            try:
+                val = int(input('Введите значения и нажимайте Enter - '))
+                self.my_list.append(val)
+                print(f'Текущий список - {self.my_list} \n ')
+            except:
+                print(f"Недопустимое значение - строка и булево")
+                y_or_n = input(f'Попробовать еще раз? Y/N ')
 
-    def __sub__(self, other):
-        return self.quantity - other.quantity if (self.quantity - other.quantity) > 0 else print('Отрицательно!')
-
-    def __mul__(self, other):
-        return Cell(int(self.quantity * other.quantity))
-
-    def __truediv__(self, other):
-        return Cell(round(self.quantity // other.quantity))
-
-    def make_order(self, cells_in_row):
-        row = ''
-        for i in range(int(self.quantity / cells_in_row)):
-            row += f'{"*" * cells_in_row} \\n'
-        row += f'{"*" * (self.quantity % cells_in_row)}'
-        return row
+                if y_or_n == 'Y' or y_or_n == 'y':
+                    print(try_except.my_input())
+                elif y_or_n == 'N' or y_or_n == 'n':
+                    return f'Вы вышли'
+                else:
+                    return f'Вы вышли'
 
 
-cells1 = Cell(33)
-cells2 = Cell(9)
-print(cells1)
-print(cells1 + cells2)
-print(cells2 - cells1)
-print(cells2.make_order(5))
-print(cells1.make_order(10))
-print(cells1 / cells2)
+try_except = Error(1)
+print(try_except.my_input())
